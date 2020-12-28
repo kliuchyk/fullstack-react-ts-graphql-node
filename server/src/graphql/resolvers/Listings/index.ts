@@ -2,9 +2,9 @@
 import { ObjectId } from "mongodb";
 import { IResolvers } from "apollo-server-express";
 
-import { DataBase, Listing } from "../lib/types";
+import { DataBase, Listing } from "../../../lib/types";
 
-export const resolvers: IResolvers = {
+export const listingResolvers: IResolvers = {
   Query: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     listings: async (
