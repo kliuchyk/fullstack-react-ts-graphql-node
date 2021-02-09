@@ -33,13 +33,14 @@ interface Props {
 }
 
 export const Listings = (props: Props) => {
-  const { data } = useQuery<ListingsData>(LISTINGS);
+  const { data, refetch } = useQuery<ListingsData>(LISTINGS);
 
   const deleteListing = async (id: string) => {
     await server.fetch<DeleteListingData, DeleteListingVariables>({
       query: DELETE_LISTING,
       variables: { id },
     });
+    refetch();
   };
 
   const listingsList = data?.listings ? (
